@@ -1,0 +1,10 @@
+gcc read/rf_n.c -o exe/ef_n
+./exe/ef_n
+
+can apend " -lm" to 1
+
+1 for make 
+2 for run
+
+rf_n = name of readable file in process
+ef_n = name of executable file in the process
