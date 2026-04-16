@@ -105,6 +105,199 @@ Refer to `exe.txt` for:
 - Special compiler flags required
 - Execution instructions
 
+## Git Workflow & Version Control
+
+This repository uses Git for version control with a branching strategy to manage development and production code.
+
+### Branch Strategy
+
+- **`main` branch**: Stable, production-ready code
+- **`development` branch**: Active development branch where new features and programs are added
+
+### Basic Git Commands
+
+#### 1. **Checking Repository Status**
+
+```bash
+# View current branch and file changes
+git status
+
+# View detailed changes in files
+git diff
+
+# View all branches (local and remote)
+git branch -a
+```
+
+#### 2. **Switching Between Branches**
+
+```bash
+# Switch to an existing branch
+git checkout development
+
+# Create and switch to a new branch
+git checkout -b <new-branch-name>
+
+# Switch back to previous branch
+git checkout -
+```
+
+#### 3. **Making Changes and Committing**
+
+```bash
+# Stage a specific file
+git add read/filename.c
+
+# Stage multiple files
+git add read/file1.c read/file2.c
+
+# Stage all changes
+git add .
+
+# View staged changes
+git status
+
+# Commit with a message
+git commit -m "Descriptive message about changes"
+
+# Commit with detailed message (opens editor)
+git commit
+```
+
+#### 4. **Pushing Changes to Remote**
+
+```bash
+# Push current branch to remote
+git push origin <branch-name>
+
+# Push to development branch specifically
+git push origin development
+
+# Push to main branch
+git push origin main
+
+# Set upstream branch for future pushes
+git push -u origin <branch-name>
+```
+
+#### 5. **Pulling Latest Changes**
+
+```bash
+# Pull latest changes from current branch
+git pull
+
+# Pull from specific branch
+git pull origin <branch-name>
+
+# Fetch without merging
+git fetch origin
+```
+
+#### 6. **Viewing Commit History**
+
+```bash
+# View recent commits (short format)
+git log --oneline
+
+# View commits with graph visualization
+git log --oneline --graph --all
+
+# View commits with limited entries
+git log --oneline -10
+
+# View commits for specific file
+git log -- read/filename.c
+```
+
+### Typical Development Workflow
+
+#### Step 1: Create a New Feature Branch
+```bash
+git checkout -b feature/add-new-program
+```
+
+#### Step 2: Make Changes
+```bash
+# Create new C programs
+# Edit existing files
+# Test your programs
+```
+
+#### Step 3: Stage and Commit Changes
+```bash
+git add read/new_program.c
+git commit -m "Add new interview program - pattern matching"
+```
+
+#### Step 4: Push to Development Branch
+```bash
+git push origin feature/add-new-program
+```
+
+#### Step 5: Merge to Development (via Pull Request)
+After testing, create a pull request and merge to `development` branch.
+
+#### Step 6: Merge to Main When Ready
+Once tested on development, merge to `main` for production release.
+
+### Common Git Tasks
+
+#### Undo Uncommitted Changes
+```bash
+# Discard changes in working directory
+git checkout -- read/filename.c
+
+# Discard all changes
+git checkout -- .
+```
+
+#### Undo a Commit (before pushing)
+```bash
+# Soft reset - keeps changes staged
+git reset --soft HEAD~1
+
+# Hard reset - discards changes completely
+git reset --hard HEAD~1
+```
+
+#### View Remote URL
+```bash
+git remote -v
+```
+
+#### Add Remote Repository
+```bash
+git remote add origin https://github.com/yourusername/c-practice.git
+```
+
+### Interview Programs Git History
+
+The following interview programs were added via commits on the development branch:
+
+| Program | File | Commit Purpose |
+|---------|------|-----------------|
+| Fibonacci | `read/fibonacci.c` | Generate Fibonacci sequence up to n terms |
+| Prime Checker | `read/prime_checker.c` | Check if number is prime |
+| Palindrome | `read/palindrome.c` | Verify if string is palindrome |
+| Factorial | `read/factorial.c` | Calculate factorial recursively |
+| Binary Search | `read/binary_search.c` | Search in sorted array |
+
+### Best Practices for Commits
+
+✅ **Do:**
+- Make small, focused commits
+- Write clear, descriptive commit messages
+- Commit related changes together
+- Test before committing
+- Pull before pushing
+
+❌ **Don't:**
+- Commit without testing
+- Write vague commit messages like "fixed stuff"
+- Mix unrelated changes in one commit
+- Force push to shared branches
+- Commit executable files to main repository
+
 ## Development & Contribution
 
 This is a personal learning repository. Feel free to:
