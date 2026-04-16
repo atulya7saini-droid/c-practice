@@ -35,8 +35,18 @@ c-practice/
 ### Prerequisites
 
 - GCC compiler (or any C compiler)
+- Git installed
 - Basic understanding of command-line operations
 - (Optional) Math library support (`-lm` flag)
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/c-practice.git
+cd c-practice
+```
+
+Replace `yourusername` with your actual GitHub username or the appropriate repository URL.
 
 ### Building & Running
 
